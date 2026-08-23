@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Super Adorable";
+    src: url("fonts/Super Adorable.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background-color: white;
+    border-bottom: 2px solid #b00000;
+}
+
+.menu-button,
+.cart-button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.brand {
+    font-family: "Super Adorable", cursive;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.intro {
+    padding: 48px 20px;
+    text-align: center;
+}
+
+.intro-label {
+    margin: 0 0 8px;
+    color: #b00000;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.intro h1 {
+    margin: 0;
+    font-family: "Super Adorable", cursive;
+    font-size: 52px;
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.intro-text {
+    margin: 12px 0 24px;
+    font-family: cursive;
+    font-size: 21px;
+}
+
+.shop-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #b00000;
+    color: white;
+    font-family: cursive;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.shop {
+    padding: 32px 16px 48px;
+}
+
+.shop-heading {
+    margin-bottom: 20px;
+}
+
+.shop-heading p {
+    margin: 0;
+    color: #b00000;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.shop-heading h1 {
+    margin: 4px 0 0;
+    font-size: 28px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background-color: #f2f2f2;
+    color: #666;
+    font-size: 13px;
+}
+
+.product-card h2 {
+    margin: 10px 0 4px;
+    font-size: 16px;
+}
+
+.product-price {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #b00000;
+    background-color: white;
+    color: #b00000;
+    font-weight: bold;
+    cursor: pointer;
+}
