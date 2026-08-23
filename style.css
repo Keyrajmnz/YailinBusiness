@@ -11,10 +11,12 @@
 
 body {
     margin: 0;
-    background-color: white;
+    background-color: #ffffff;
     color: black;
     font-family: Arial, sans-serif;
 }
+
+/* Header */
 
 .site-header {
     display: flex;
@@ -34,11 +36,19 @@ body {
 }
 
 .brand {
+    color: black;
     font-family: "Super Adorable", cursive;
     font-size: 26px;
     font-weight: normal;
     text-align: center;
+    text-decoration: none;
 }
+
+.brand:visited {
+    color: black;
+}
+
+/* Homepage */
 
 .intro {
     padding: 48px 20px;
@@ -68,16 +78,137 @@ body {
     font-size: 21px;
 }
 
+/* Shop Candy button */
+
 .shop-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #b00000;
-    color: white;
-    font-family: cursive;
-    font-size: 17px;
-    font-weight: bold;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 58px;
+    overflow: hidden;
+    border: 2px solid #8f1414;
+    border-radius: 12px;
+    background-color: white;
+    color: #8f1414;
+    font-family: "Super Adorable", cursive;
+    font-size: 21px;
     text-decoration: none;
 }
+
+.shop-button-text {
+    position: relative;
+    z-index: 3;
+    transition: color 0.2s ease;
+}
+
+.chamoy-liquid {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #861313;
+    transform: translateY(100%);
+    transition: transform 0.75s cubic-bezier(0.22, 0.75, 0.25, 1);
+}
+
+.chamoy-wave {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 200%;
+    height: 18px;
+    animation-play-state: paused;
+}
+
+.chamoy-wave-back {
+    top: -10px;
+    opacity: 0.65;
+    animation: wave-back 2.6s linear infinite;
+}
+
+.chamoy-wave-back path {
+    fill: #b42a22;
+}
+
+.chamoy-wave-front {
+    top: -7px;
+    animation: wave-front 1.8s linear infinite;
+}
+
+.chamoy-wave-front path {
+    fill: #861313;
+}
+
+.shop-button.is-filling .chamoy-liquid {
+    transform: translateY(0);
+}
+
+.shop-button.is-filling .chamoy-wave {
+    animation-play-state: running;
+}
+
+.shop-button.is-filling .shop-button-text {
+    color: white;
+    transition-delay: 0.3s;
+}
+
+.shop-button.is-popping {
+    animation: button-pop 0.2s ease;
+}
+
+@keyframes wave-front {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes wave-back {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes button-pop {
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Photo strip */
+
+.photo-strip {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.photo-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.photo-track img {
+    display: block;
+    flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Shop page */
 
 .shop {
     padding: 32px 16px 48px;
@@ -112,7 +243,7 @@ body {
     justify-content: center;
     aspect-ratio: 1 / 1;
     background-color: #f2f2f2;
-    color: #666;
+    color: #667;
     font-size: 13px;
 }
 
@@ -134,4 +265,54 @@ body {
     color: #b00000;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .chamoy-wave {
+        animation: none;
+    }
+
+    .chamoy-liquid {
+        transition: none;
+    }
+
+    .shop-button.is-popping {
+        animation: none;
+    }
+}
+
+/* About */
+
+.about-section {
+    width: calc(100% - 40px);
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 40px 24px;
+    background-color: #8f1414;
+    color: white;
+    text-align: center;
+}
+
+.about-label {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-section h2 {
+    margin: 0 0 16px;
+    font-family: "Super Adorable", cursive;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+.about-text {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
 }
