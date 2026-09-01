@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Yailin Business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <button
+            class="menu-button"
+            aria-label="Open menu"
+            onclick="document.querySelector('.site-menu').classList.add('open')"
+        >
+            ☰
+        </button>
+
+        <a class="brand" href="index.html">
+            Yailin Business
+        </a>
+
+        <a
+            class="cart-button"
+            href="shop.html"
+            aria-label="Back to shop"
+        >
+            🛒
+        </a>
+    </header>
+
+    <nav class="site-menu">
+        <button
+            class="close-menu"
+            aria-label="Close menu"
+            onclick="document.querySelector('.site-menu').classList.remove('open')"
+        >
+            ×
+        </button>
+
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <section class="faq-page">
+            <p class="faq-label">
+                Checkout
+            </p>
+
+            <h1>Your Order</h1>
+
+            <div class="cart-items"></div>
+
+            <p class="cart-total">
+                Total: $0
+            </p>
+
+            <a
+                class="faq-shop-button"
+                href="shop.html"
+            >
+                Back to Shop
+            </a>
+
+            <div class="order-form open">
+                <h2>Order Details</h2>
+
+                <label for="customer-name">
+                    Name
+                </label>
+
+                <input
+                    id="customer-name"
+                    type="text"
+                    placeholder="Your name"
+                >
+
+                <label for="contact-method">
+                    Contact Method
+                </label>
+
+                <select id="contact-method">
+                    <option value="">
+                        Choose one
+                    </option>
+
+                    <option value="Instagram">
+                        Instagram
+                    </option>
+
+                    <option value="Phone">
+                        Phone Number
+                    </option>
+                </select>
+
+                <div
+                    id="contact-field"
+                    class="contact-field"
+                    hidden
+                >
+                    <label
+                        id="contact-label"
+                        for="customer-contact"
+                    >
+                        Contact
+                    </label>
+
+                    <div class="contact-input">
+                        <span id="contact-prefix"></span>
+
+                        <input
+                            id="customer-contact"
+                            type="text"
+                        >
+                    </div>
+                </div>
+
+                <label for="payment-method">
+                    Payment Method
+                </label>
+
+                <select id="payment-method">
+                    <option value="">
+                        Choose one
+                    </option>
+
+                    <option value="Cash">
+                        Cash
+                    </option>
+
+                    <option value="Cash App">
+                        Cash App
+                    </option>
+
+                    <option value="Venmo">
+                        Venmo
+                    </option>
+
+                    <option value="Zelle">
+                        Zelle
+                    </option>
+                </select>
+
+                <label for="special-instructions">
+                    Special Instructions
+                </label>
+
+                <textarea
+                    id="special-instructions"
+                    placeholder="Anything we should know about your order?"
+                ></textarea>
+
+                <p class="pickup-note">
+                    Pickup only. Pickup details will be confirmed after ordering.
+                </p>
+
+                <p class="form-message"></p>
+
+                <button class="place-order">
+                    Place Order
+                </button>
+
+                <div class="order-summary"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+</html>

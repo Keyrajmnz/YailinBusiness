@@ -9,43 +9,665 @@
 
 <body>
     <header class="site-header">
-        <button class="menu-button" aria-label="Open menu">☰</button>
+        <button
+            class="menu-button"
+            aria-label="Open menu"
+            onclick="document.querySelector('.site-menu').classList.add('open')"
+        >
+            ☰
+        </button>
 
         <a class="brand" href="index.html">
             Yailin Business
         </a>
 
-        <button class="cart-button" aria-label="View cart">🛒</button>
+        <button class="cart-button" aria-label="View cart">
+            🛒 <span class="cart-count">0</span>
+        </button>
     </header>
+
+    <nav class="site-menu">
+        <button
+            class="close-menu"
+            aria-label="Close menu"
+            onclick="document.querySelector('.site-menu').classList.remove('open')"
+        >
+            ×
+        </button>
+
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
     <main>
         <section class="shop">
             <div class="shop-heading">
-                <p>Our Candy</p>
+                <p>Our Menu</p>
                 <h1>Shop</h1>
             </div>
 
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-image">
-                        <span>Product Photo</span>
-                    </div>
+            <p class="shop-message"></p>
 
-                    <h2>Product Name</h2>
-                    <p class="product-price">$0.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </article>
+            <section class="shop-category">
+                <h2 class="category-title">
+                    Chamoy Candy
+                </h2>
 
-                <article class="product-card">
-                    <div class="product-image">
-                        <span>Product Photo</span>
-                    </div>
+                <div class="product-grid">
 
-                    <h2>Product Name</h2>
-                    <p class="product-price">$0.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </article>
-            </div>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Gummy Bears</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gummy-bears-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gummy-bears-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="gummy-bears-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="gummy-bears-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Gushers</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gushers-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gushers-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="gushers-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="gushers-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Watermelon Sour Patch</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="watermelon-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="watermelon-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="watermelon-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="watermelon-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Trolli</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="trolli-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="trolli-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="trolli-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="trolli-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Sour Mix</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="sour-mix-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="sour-mix-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="sour-mix-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="sour-mix-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chamoy Everything Mix</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="everything-mix-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="everything-mix-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="everything-mix-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="everything-mix-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Popular Chamoy Mix</h2>
+
+                        <div class="size-options">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="popular-mix-size"
+                                    value="2 oz"
+                                >
+                                2 oz · $2
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="popular-mix-size"
+                                    value="4 oz"
+                                >
+                                4 oz · $4
+                            </label>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="popular-mix-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="popular-mix-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="shop-category">
+                <h2 class="category-title">
+                    Kits
+                </h2>
+
+                <div class="product-grid">
+
+                    <article class="product-card" data-price="5">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Maruchan Kit</h2>
+
+                        <p class="single-price">$5</p>
+
+                        <div class="kit-options">
+                            <label for="kit-side">
+                                Choose one
+                            </label>
+
+                            <select
+                                id="kit-side"
+                                class="kit-side"
+                            >
+                                <option value="">
+                                    Choose one
+                                </option>
+
+                                <option value="2 oz Popular Chamoy Mix">
+                                    2 oz Popular Chamoy Mix
+                                </option>
+
+                                <option value="Spicy Chips">
+                                    Spicy Chips
+                                </option>
+                            </select>
+
+                            <label for="kit-drink">
+                                Choose drink
+                            </label>
+
+                            <select
+                                id="kit-drink"
+                                class="kit-drink"
+                            >
+                                <option value="">
+                                    Choose one
+                                </option>
+
+                                <option value="Water">
+                                    Water
+                                </option>
+
+                                <option value="Capri Sun">
+                                    Capri Sun
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="quantity">
+                            <label for="kit-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="kit-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="shop-category">
+                <h2 class="category-title">
+                    Snacks & Drinks
+                </h2>
+
+                <div class="product-grid">
+
+                    <article class="product-card" data-price="2">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Gansito</h2>
+                        <p class="single-price">$2</p>
+
+                        <div class="quantity">
+                            <label for="gansito-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="gansito-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="1">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Capri Sun</h2>
+                        <p class="single-price">$1</p>
+
+                        <div class="quantity">
+                            <label for="capri-sun-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="capri-sun-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="1">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Water</h2>
+                        <p class="single-price">$1</p>
+
+                        <div class="quantity">
+                            <label for="water-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="water-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="2">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Chips</h2>
+                        <p class="single-price">$2</p>
+
+                        <div class="quantity">
+                            <label for="chips-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="chips-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="2">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Maruchan</h2>
+                        <p class="single-price">$2</p>
+
+                        <div class="quantity">
+                            <label for="maruchan-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="maruchan-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="3">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Alani</h2>
+                        <p class="single-price">$3</p>
+
+                        <div class="quantity">
+                            <label for="alani-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="alani-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                    <article class="product-card" data-price="2">
+                        <div class="product-image">
+                            <span>Product Photo</span>
+                        </div>
+
+                        <h2>Arizona</h2>
+                        <p class="single-price">$2</p>
+
+                        <div class="quantity">
+                            <label for="arizona-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                id="arizona-quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </article>
+
+                </div>
+            </section>
+        </section>
+
+        <section class="cart-panel">
+            <button
+                class="close-cart"
+                aria-label="Close cart"
+            >
+                ×
+            </button>
+
+            <h2>Your Cart</h2>
+
+            <div class="cart-items"></div>
+
+            <p class="cart-total">
+                Total: $0
+            </p>
+
+            <button class="continue-order">
+                Continue Order
+            </button>
         </section>
     </main>
 
