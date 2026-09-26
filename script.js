@@ -52,9 +52,9 @@ productCards.forEach(function(card) {
         const kitDrink =
             card.querySelector(".kit-drink");
 
-        if (quantity < 1) {
+        if (!Number.isInteger(quantity) || quantity < 1) {
             shopMessage.textContent =
-                "Quantity must be at least 1.";
+                "Quantity must be a whole number of at least 1.";
 
             return;
         }
@@ -215,13 +215,13 @@ function showCart() {
         if (item.details !== "") {
             itemDetails.textContent =
                 item.details +
-                " · Quantity: " +
+                " · Qty: " +
                 item.quantity +
                 " · $" +
                 itemTotal;
         } else {
             itemDetails.textContent =
-                "Quantity: " +
+                "Qty: " +
                 item.quantity +
                 " · $" +
                 itemTotal;

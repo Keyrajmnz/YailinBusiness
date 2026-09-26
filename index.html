@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yailin Business</title>
+    <title>Yailin's Munchies — Chamoy Candy & Snacks</title>
+    <meta name="description" content="Small-batch chamoy candy, kits, snacks and drinks. Pickup only. Everything spice.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,70 +17,126 @@
         <button
             class="menu-button"
             aria-label="Open menu"
+            data-testid="menu-open-button"
             onclick="document.querySelector('.site-menu').classList.add('open')"
         >
-            ☰
+            <span></span><span></span><span></span>
         </button>
 
         <a class="brand" href="index.html">
-            Yailin Business
+            Yailin's <em>Munchies</em>
         </a>
 
-        <a class="cart-button" href="shop.html" aria-label="View shop">
-            🛒
+        <a class="cart-button" href="shop.html" data-testid="cart-link">
+            Cart <span class="cart-count">0</span>
         </a>
     </header>
 
-    <nav class="site-menu">
+    <nav class="site-menu" data-testid="site-menu" aria-label="Main menu">
         <button
             class="close-menu"
             aria-label="Close menu"
+            data-testid="menu-close-button"
             onclick="document.querySelector('.site-menu').classList.remove('open')"
         >
             ×
         </button>
 
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" aria-current="page" class="active"><span class="menu-index">01</span>Home</a>
+        <a href="shop.html"><span class="menu-index">02</span>Shop</a>
+        <a href="faq.html"><span class="menu-index">03</span>FAQ</a>
+        <a href="contact.html"><span class="menu-index">04</span>Contact</a>
+
+        <p class="menu-footnote">Pickup only · Everything spice</p>
     </nav>
 
     <main>
-        <section class="intro">
-            <p class="intro-label">
-                Chamoy • Candy • Spice
-            </p>
+        <section class="hero">
+            <p class="hero-label">Small-batch chamoy candy &amp; snacks</p>
 
-            <h1>Yailin Business</h1>
+            <h1 class="hero-title" data-testid="hero-title">
+                <span class="line"><span class="line-inner">Yailin's</span></span>
+                <span class="line"><span class="line-inner accent">Munchies</span></span>
+            </h1>
 
-            <p class="intro-text">
-                Everything Spice
-            </p>
+            <p class="hero-tag">everything spice <span class="asterisk" aria-hidden="true">✳</span></p>
 
-            <a class="shop-button" href="shop.html">
-                Shop Candy
-            </a>
+            <div class="hero-actions">
+                <a class="btn btn-solid" href="shop.html" data-testid="hero-shop-button">Shop the munchies</a>
+                <a class="btn btn-ghost" href="faq.html" data-testid="hero-faq-button">How pickup works</a>
+            </div>
+
+            <figure class="hero-photo" data-testid="hero-photo">
+                <img src="images/chamoo.jpeg" alt="Cups of homemade chamoy candy">
+                <figcaption>the goods, irl — made by hand</figcaption>
+            </figure>
         </section>
 
-        <section class="candy-photo">
-            <img
-                src="images/chamoo.jpeg"
-                alt="Chamoy candy cups"
-            >
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Chamoy ✦ Candy ✦ Spice ✦ Everything Spice ✦ Pickup Only ✦ Made Fresh ✦&nbsp;</span>
+                <span>Chamoy ✦ Candy ✦ Spice ✦ Everything Spice ✦ Pickup Only ✦ Made Fresh ✦&nbsp;</span>
+            </div>
+        </div>
+
+        <section class="featured reveal">
+            <p class="section-label">Fan favorites</p>
+            <h2 class="section-title">Start here</h2>
+
+            <div class="featured-grid">
+                <a class="teaser" href="shop.html" data-testid="teaser-gummy-bears">
+                    <div class="product-image ph ph-red">
+                        <span class="ph-letters" aria-hidden="true">GB</span>
+                    </div>
+                    <p class="teaser-name">Chamoy Gummy Bears</p>
+                    <p class="teaser-price">from $2</p>
+                </a>
+
+                <a class="teaser" href="shop.html" data-testid="teaser-maruchan-kit">
+                    <div class="product-image ph ph-orange">
+                        <span class="ph-letters" aria-hidden="true">MK</span>
+                    </div>
+                    <p class="teaser-name">Maruchan Kit</p>
+                    <p class="teaser-price">$5</p>
+                </a>
+
+                <a class="teaser" href="shop.html" data-testid="teaser-gansito">
+                    <div class="product-image ph ph-pink">
+                        <span class="ph-letters" aria-hidden="true">GA</span>
+                    </div>
+                    <p class="teaser-name">Gansito</p>
+                    <p class="teaser-price">$2</p>
+                </a>
+            </div>
         </section>
 
-        <section class="about-section">
-            <p class="about-label">
-                Our Story
-            </p>
+        <section class="about-section reveal">
+            <p class="about-label">Our story</p>
 
-            <h2>About Us</h2>
+            <h2>About us</h2>
 
             <p class="about-text">
-                Our story is coming soon.
+                Yailin's Munchies is a small home business making
+                chamoy candy, kits, and snacks by hand. Our full story
+                is coming soon — for now, the candy speaks for itself.
             </p>
+
+            <a class="btn btn-cream" href="contact.html" data-testid="about-contact-button">Say hi</a>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Yailin's Munchies</p>
+        <p class="footer-note">Pickup only · Made with love · Everything spice</p>
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© <span class="footer-year">2026</span> Yailin's Munchies</p>
+    </footer>
+
+    <script src="site.js"></script>
 </body>
 </html>

@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Yailin Business</title>
+    <title>Contact — Yailin's Munchies</title>
+    <meta name="description" content="Questions about an order or the menu? Reach out on Instagram or TikTok.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,64 +17,78 @@
         <button
             class="menu-button"
             aria-label="Open menu"
+            data-testid="menu-open-button"
             onclick="document.querySelector('.site-menu').classList.add('open')"
         >
-            ☰
+            <span></span><span></span><span></span>
         </button>
 
         <a class="brand" href="index.html">
-            Yailin Business
+            Yailin's <em>Munchies</em>
         </a>
 
-        <a class="cart-button" href="shop.html" aria-label="View shop">
-            🛒
+        <a class="cart-button" href="shop.html" data-testid="cart-link">
+            Cart <span class="cart-count">0</span>
         </a>
     </header>
 
-    <nav class="site-menu">
+    <nav class="site-menu" data-testid="site-menu" aria-label="Main menu">
         <button
             class="close-menu"
             aria-label="Close menu"
+            data-testid="menu-close-button"
             onclick="document.querySelector('.site-menu').classList.remove('open')"
         >
             ×
         </button>
 
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html"><span class="menu-index">01</span>Home</a>
+        <a href="shop.html"><span class="menu-index">02</span>Shop</a>
+        <a href="faq.html"><span class="menu-index">03</span>FAQ</a>
+        <a href="contact.html" aria-current="page" class="active"><span class="menu-index">04</span>Contact</a>
+
+        <p class="menu-footnote">Pickup only · Everything spice</p>
     </nav>
 
     <main>
         <section class="contact-page">
-            <p class="contact-label">
-                Get in Touch
-            </p>
+            <p class="section-label">Get in touch</p>
 
-            <h1>Contact</h1>
+            <h1 data-testid="contact-title">Say hi<span class="accent-dot">.</span></h1>
 
             <p class="contact-text">
-                Have a question about an order or our menu?
-                Reach out through Instagram or TikTok.
+                Our Instagram and TikTok pages are still being set up.
+                Online inquiries and orders are not available yet.
             </p>
 
             <div class="contact-info">
-                <div class="contact-item">
-                    <h2>Instagram</h2>
-                    <p>Handle coming soon</p>
+                <div class="contact-item" data-testid="contact-instagram">
+                    <h2>Instagram <span class="contact-arrow" aria-hidden="true">→</span></h2>
+                    <p>Page coming soon — not live yet</p>
                 </div>
 
-                <div class="contact-item">
-                    <h2>TikTok</h2>
-                    <p>Handle coming soon</p>
+                <div class="contact-item" data-testid="contact-tiktok">
+                    <h2>TikTok <span class="contact-arrow" aria-hidden="true">→</span></h2>
+                    <p>Page coming soon — not live yet</p>
                 </div>
             </div>
 
-            <a class="contact-shop-button" href="shop.html">
-                Shop & Order
-            </a>
+            <a class="btn btn-solid" href="shop.html" data-testid="contact-shop-button">Browse the menu</a>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Yailin's Munchies</p>
+        <p class="footer-note">Pickup only · Made with love · Everything spice</p>
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© <span class="footer-year">2026</span> Yailin's Munchies</p>
+    </footer>
+
+    <script src="site.js"></script>
 </body>
 </html>

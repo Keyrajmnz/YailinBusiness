@@ -183,7 +183,7 @@ placeOrderButton.addEventListener("click", function() {
     }
 
     let summary =
-        "Order for Yailin Business\n\n" +
+        "Order for YAILIN'S MUNCHIES\n\n" +
         "Name: " +
         name +
         "\n" +
@@ -290,13 +290,13 @@ function showOrder() {
         if (item.details !== "") {
             itemDetails.textContent =
                 item.details +
-                " · Quantity: " +
+                " · Qty: " +
                 item.quantity +
                 " · $" +
                 itemTotal;
         } else {
             itemDetails.textContent =
-                "Quantity: " +
+                "Qty: " +
                 item.quantity +
                 " · $" +
                 itemTotal;

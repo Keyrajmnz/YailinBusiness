@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order | Yailin Business</title>
+    <title>Checkout — Yailin's Munchies</title>
+    <meta name="description" content="Review your order and add your pickup details.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,89 +17,76 @@
         <button
             class="menu-button"
             aria-label="Open menu"
+            data-testid="menu-open-button"
             onclick="document.querySelector('.site-menu').classList.add('open')"
         >
-            ☰
+            <span></span><span></span><span></span>
         </button>
 
         <a class="brand" href="index.html">
-            Yailin Business
+            Yailin's <em>Munchies</em>
         </a>
 
         <a
             class="cart-button"
             href="shop.html"
             aria-label="Back to shop"
+            data-testid="back-to-shop-cart"
         >
-            🛒
+            Cart <span class="cart-count">0</span>
         </a>
     </header>
 
-    <nav class="site-menu">
+    <nav class="site-menu" data-testid="site-menu" aria-label="Main menu">
         <button
             class="close-menu"
             aria-label="Close menu"
+            data-testid="menu-close-button"
             onclick="document.querySelector('.site-menu').classList.remove('open')"
         >
             ×
         </button>
 
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html"><span class="menu-index">01</span>Home</a>
+        <a href="shop.html"><span class="menu-index">02</span>Shop</a>
+        <a href="faq.html"><span class="menu-index">03</span>FAQ</a>
+        <a href="contact.html"><span class="menu-index">04</span>Contact</a>
+
+        <p class="menu-footnote">Pickup only · Everything spice</p>
     </nav>
 
     <main>
-        <section class="faq-page">
-            <p class="faq-label">
-                Checkout
-            </p>
+        <section class="order-page">
+            <p class="section-label">Checkout</p>
 
-            <h1>Your Order</h1>
+            <h1 data-testid="order-title">Your order</h1>
 
-            <div class="cart-items"></div>
+            <div class="order-receipt" data-testid="order-receipt">
+                <div class="cart-items" data-testid="order-items"></div>
 
-            <p class="cart-total">
-                Total: $0
-            </p>
+                <p class="cart-total" data-testid="order-total">Total: $0</p>
+            </div>
 
-            <a
-                class="faq-shop-button"
-                href="shop.html"
-            >
-                Back to Shop
+            <a class="btn btn-ghost" href="shop.html" data-testid="back-to-shop-button">
+                ← Back to shop
             </a>
 
             <div class="order-form open">
-                <h2>Order Details</h2>
+                <h2>Order details</h2>
 
-                <label for="customer-name">
-                    Name
-                </label>
-
+                <label for="customer-name">Name</label>
                 <input
                     id="customer-name"
                     type="text"
                     placeholder="Your name"
+                    data-testid="customer-name-input"
                 >
 
-                <label for="contact-method">
-                    Contact Method
-                </label>
-
-                <select id="contact-method">
-                    <option value="">
-                        Choose one
-                    </option>
-
-                    <option value="Instagram">
-                        Instagram
-                    </option>
-
-                    <option value="Phone">
-                        Phone Number
-                    </option>
+                <label for="contact-method">Contact method</label>
+                <select id="contact-method" data-testid="contact-method-select">
+                    <option value="">Choose one</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Phone">Phone Number</option>
                 </select>
 
                 <div
@@ -102,73 +94,62 @@
                     class="contact-field"
                     hidden
                 >
-                    <label
-                        id="contact-label"
-                        for="customer-contact"
-                    >
-                        Contact
-                    </label>
+                    <label id="contact-label" for="customer-contact">Contact</label>
 
                     <div class="contact-input">
                         <span id="contact-prefix"></span>
-
                         <input
                             id="customer-contact"
                             type="text"
+                            data-testid="customer-contact-input"
                         >
                     </div>
                 </div>
 
-                <label for="payment-method">
-                    Payment Method
-                </label>
-
-                <select id="payment-method">
-                    <option value="">
-                        Choose one
-                    </option>
-
-                    <option value="Cash">
-                        Cash
-                    </option>
-
-                    <option value="Cash App">
-                        Cash App
-                    </option>
-
-                    <option value="Venmo">
-                        Venmo
-                    </option>
-
-                    <option value="Zelle">
-                        Zelle
-                    </option>
+                <label for="payment-method">Payment method</label>
+                <select id="payment-method" data-testid="payment-method-select">
+                    <option value="">Choose one</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Cash App">Cash App</option>
+                    <option value="Venmo">Venmo</option>
+                    <option value="Zelle">Zelle</option>
                 </select>
 
-                <label for="special-instructions">
-                    Special Instructions
-                </label>
-
+                <label for="special-instructions">Special instructions</label>
                 <textarea
                     id="special-instructions"
                     placeholder="Anything we should know about your order?"
+                    data-testid="special-instructions-input"
                 ></textarea>
 
                 <p class="pickup-note">
-                    Pickup only. Pickup details will be confirmed after ordering.
+                    <span aria-hidden="true">✳</span> Pickup only. This button creates a summary for your review. Nothing is sent or confirmed yet; online ordering will open when contact details are available.
                 </p>
 
-                <p class="form-message"></p>
+                <p class="form-message" data-testid="form-message" role="status"></p>
 
-                <button class="place-order">
-                    Place Order
+                <button class="place-order" data-testid="place-order-button">
+                    Review order summary
                 </button>
 
-                <div class="order-summary"></div>
+                <div class="order-summary" data-testid="order-summary"></div>
             </div>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <p class="footer-brand">Yailin's Munchies</p>
+        <p class="footer-note">Pickup only · Made with love · Everything spice</p>
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© <span class="footer-year">2026</span> Yailin's Munchies</p>
+    </footer>
+
+    <script src="site.js"></script>
     <script src="order.js"></script>
 </body>
 </html>

@@ -1,68 +1,51 @@
-# ⋆˚꩜｡ Chamoy Candy Business Website ｡꩜˚⋆
+# Yailin's Munchies — Website Source Code
 
-A mobile-friendly website I’m building for my sister’s chamoy candy business. It is designed to make it easy for customers to view products, add items to their cart, and place an order.
+A small vanilla HTML/CSS/JavaScript website for a chamoy candy and snack business.
+No frameworks, no build step, no dependencies to install.
 
-## .✦ ݁˖ Live Website ˖ ݁✦.
+## How to open it locally
 
-https://keyrajmnz.github.io/YailinBusiness/
+Option 1 — quickest: double-click `index.html`. It opens in your browser and everything works.
 
-## .✦ ݁˖ Features ˖ ݁✦.
+Option 2 — recommended (so the cart and pages behave exactly like the live site): serve the folder with any tiny static server, for example:
 
-★ Mobile-friendly layout
+    python3 -m http.server 8080
 
-★ Shop page with products and prices
+then open http://localhost:8080 in your browser.
 
-★ Add-to-cart system
+## Files in this ZIP
 
-★ Quantity controls
+Upload ALL of these to your GitHub repository (Keyrajmnz/YailinBusiness), keeping this exact structure:
 
-★ Cart saved with Local Storage
+    index.html        Home (animated hero, marquee, featured products)
+    shop.html         Menu with sizes, quantities, kits, cart
+    faq.html          Questions & answers
+    contact.html      Contact page
+    order.html        Checkout: order summary + details form
+    style.css         All styles for every page
+    script.js         Shop + cart logic (loads on shop.html only)
+    order.js          Checkout logic (loads on order.html only)
+    site.js           Shared UI: menu helpers, scroll reveals, footer year, cart count
+    favicon.svg       Site icon
+    fonts/
+      Super Adorable.ttf   Brand font
+    images/
+      chamoo.jpeg          Hero candy photo
 
-★ Order summary
+These replace the old files of the same name in the repository (index.html, shop.html,
+faq.html, contact.html, order.html, style.css, script.js, order.js). The new files
+site.js and favicon.svg are additions. Everything else in the repo can stay as is.
 
-★ Automatic order total
+## Notes
 
-★ Checkout/order page
+- The cart is saved in the visitor's browser (localStorage key "cartItems").
+- Checkout creates an order summary on the page for the customer to review.
+  Nothing is sent anywhere yet — that step is still to come.
+- Product photos are placeholders. To use a real photo, open shop.html, find the
+  product, and replace its `<div class="product-image ph ...">...</div>` with
+  `<div class="product-image"><img src="images/your-photo.jpg" alt="Product name"></div>`.
+  Each placeholder has an HTML comment above it showing exactly what to do.
 
-★ Simple navigation
+## Copy correction in this reviewed ZIP
 
-## .✦ ݁˖ Built With ˖ ݁✦.
-
-|              |                 |
-| ------------ | --------------- |
-| ★ HTML       | ★ CSS           |
-| ★ JavaScript | ★ Local Storage |
-
-## .✦ ݁˖ Current Progress ˖ ݁✦.
-
-The main website and shopping system are working. Customers can browse the menu, add products to their cart, change quantities, and continue to the order page.
-
-The official business name and final branding are still being decided.
-
-## .✦ ݁˖ Next Steps ˖ ݁✦.
-
-★ Connect the order form for real order submissions
-
-★ Finish the checkout process
-
-★ Add the official business name
-
-★ Add the final logo and branding
-
-★ Add Instagram and TikTok
-
-★ Add final product photos and information
-
-★ Test the website on different phone sizes
-
-★ Polish the design before launch
-
-## .✦ ݁˖ About This Project ˖ ݁✦.
-
-I created this website for my sister’s small chamoy candy business while improving my HTML, CSS, and JavaScript skills.
-
-This project has also helped me practice building a real website around the needs of an actual small business.
-
-## .✦ ݁˖ GitHub Repository ˖ ݁✦.
-
-https://github.com/Keyrajmnz/YailinBusiness
+The Contact, FAQ, and Checkout pages now state that no contact or order delivery channel is live yet. This avoids directing customers to the special-instructions field when it cannot send anything.

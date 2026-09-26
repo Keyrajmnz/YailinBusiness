@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Yailin Business</title>
+    <title>FAQ — Yailin's Munchies</title>
+    <meta name="description" content="Sizes, ordering, pickup, and payment questions answered.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,130 +17,100 @@
         <button
             class="menu-button"
             aria-label="Open menu"
+            data-testid="menu-open-button"
             onclick="document.querySelector('.site-menu').classList.add('open')"
         >
-            ☰
+            <span></span><span></span><span></span>
         </button>
 
         <a class="brand" href="index.html">
-            Yailin Business
+            Yailin's <em>Munchies</em>
         </a>
 
-        <a class="cart-button" href="shop.html" aria-label="View shop">
-            🛒
+        <a class="cart-button" href="shop.html" data-testid="cart-link">
+            Cart <span class="cart-count">0</span>
         </a>
     </header>
 
-    <nav class="site-menu">
+    <nav class="site-menu" data-testid="site-menu" aria-label="Main menu">
         <button
             class="close-menu"
             aria-label="Close menu"
+            data-testid="menu-close-button"
             onclick="document.querySelector('.site-menu').classList.remove('open')"
         >
             ×
         </button>
 
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html"><span class="menu-index">01</span>Home</a>
+        <a href="shop.html"><span class="menu-index">02</span>Shop</a>
+        <a href="faq.html" aria-current="page" class="active"><span class="menu-index">03</span>FAQ</a>
+        <a href="contact.html"><span class="menu-index">04</span>Contact</a>
+
+        <p class="menu-footnote">Pickup only · Everything spice</p>
     </nav>
 
     <main>
         <section class="faq-page">
-            <p class="faq-label">
-                Questions & Answers
-            </p>
+            <p class="section-label">Questions &amp; answers</p>
 
-            <h1>FAQ</h1>
+            <h1 data-testid="faq-title">FAQ</h1>
 
             <div class="faq-list">
 
-                <div class="faq-item">
-                    <h2>
-                        What sizes do the chamoy candies come in?
-                    </h2>
-
-                    <p>
-                        Chamoy candies come in 2 oz for $2
-                        and 4 oz for $4.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">01</span>What sizes do the chamoy candies come in?</h2>
+                    <p>Chamoy candies come in 2 oz for $2 and 4 oz for $4.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        How do I place an order?
-                    </h2>
-
-                    <p>
-                        Choose what you want from the Shop,
-                        add it to your cart, and continue to
-                        your order details.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">02</span>How do I place an order?</h2>
+                    <p>You can add items to a cart and review an order summary. Online ordering is not available yet.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        Is pickup available?
-                    </h2>
-
-                    <p>
-                        Yes. Orders are pickup only.
-                        Pickup details are confirmed after ordering.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">03</span>Is pickup available?</h2>
+                    <p>Pickup only. The site does not send or confirm orders yet; pickup details will be available when ordering opens.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        What payment methods do you accept?
-                    </h2>
-
-                    <p>
-                        Cash, Cash App, Venmo, and Zelle.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">04</span>What payment methods do you accept?</h2>
+                    <p>Cash, Cash App, Venmo, and Zelle.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        What comes in the Maruchan Kit?
-                    </h2>
-
-                    <p>
-                        The $5 kit includes Maruchan, Gansito,
-                        a choice of 2 oz Popular Chamoy Mix or
-                        spicy chips, and a choice of water or
-                        Capri Sun.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">05</span>What comes in the Maruchan Kit?</h2>
+                    <p>The $5 kit includes Maruchan, Gansito, a choice of 2 oz Popular Chamoy Mix or spicy chips, and a choice of water or Capri Sun.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        Can I order more than one item?
-                    </h2>
-
-                    <p>
-                        Yes. You can add different products
-                        and quantities to your cart before ordering.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">06</span>Can I order more than one item?</h2>
+                    <p>Yes. You can add different products and quantities to your cart before ordering.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h2>
-                        Can I leave special instructions?
-                    </h2>
-
-                    <p>
-                        Yes. You can add special instructions
-                        when filling out your order details.
-                    </p>
+                <div class="faq-item reveal">
+                    <h2><span class="faq-index">07</span>Can I leave special instructions?</h2>
+                    <p>Yes. You can add special instructions when filling out your order details.</p>
                 </div>
 
             </div>
 
-            <a class="faq-shop-button" href="shop.html">
-                View Menu
-            </a>
+            <a class="btn btn-solid" href="shop.html" data-testid="faq-shop-button">View the menu</a>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Yailin's Munchies</p>
+        <p class="footer-note">Pickup only · Made with love · Everything spice</p>
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© <span class="footer-year">2026</span> Yailin's Munchies</p>
+    </footer>
+
+    <script src="site.js"></script>
 </body>
 </html>
